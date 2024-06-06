@@ -58,48 +58,13 @@ if (currentTheme) {
   }
 }
 
-//Adding date
-
-let myDate = document.querySelector("#datee");
-
-const yes = new Date().getFullYear();
-myDate.innerHTML = yes;
-
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-const phrases = ["code", "solve  problems", "learn history","read books"];
-const el = document.getElementById("typewriter");
-
-let sleepTime = 100;
-
-let curPhraseIndex = 0;
-
-const writeLoop = async () => {
-  while (true) {
-    let curWord = phrases[curPhraseIndex];
-
-    for (let i = 0; i < curWord.length; i++) {
-      el.innerText = curWord.substring(0, i + 1);
-      await sleep(sleepTime);
-    }
-
-    await sleep(sleepTime * 10);
-
-    for (let i = curWord.length; i > 0; i--) {
-      el.innerText = curWord.substring(0, i - 1);
-      await sleep(sleepTime);
-    }
-
-    await sleep(sleepTime * 5);
-
-    if (curPhraseIndex === phrases.length - 1) {
-      curPhraseIndex = 0;
-    } else {
-      curPhraseIndex++;
-    }
-  }
-};
-
-writeLoop();
+document.querySelectorAll('.skill-btn').forEach((btn, index) => {
+  btn.addEventListener('mouseover', () => {
+    // Hide all skill cards
+    document.querySelectorAll('.skill-card').forEach(card => {
+      card.style.display = 'none';
+    });
+    const skillCardId = ['webDev', 'progLang', 'osFrameworks'][index];
+    document.getElementById(skillCardId).style.display = 'block';
+  });
+});

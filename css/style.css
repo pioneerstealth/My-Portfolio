@@ -109,6 +109,41 @@ body {
   width: 40px;
 }
 
+/* Container for navigation buttons */
+.skills-navigation {
+  display: flex;
+  justify-content: space-around; /* Distributes buttons evenly across the container */
+  background-color: var(--bg-primary); /* Light grey background */
+  padding: 20px 0; /* Padding around the buttons */
+  margin-bottom: 20px; /* Space below the navigation */
+}
+
+/* Style for individual buttons */
+.skill-btn {
+  background-color: #007bff; /* Bootstrap primary color */
+  border: none; /* Removes the default button border */
+  color: white; /* Text color */
+  padding: 10px 24px; /* Top and bottom padding, left and right padding */
+  text-align: center; /* Center align text */
+  text-decoration: none; /* Removes underline from links if used as buttons */
+  display: inline-block;
+  font-size: 16px; /* Font size */
+  margin: 4px 2px; /* Margin around buttons */
+  cursor: pointer; /* Changes cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  border-radius: 10px;
+}
+
+/* Hover effect for buttons */
+.skill-btn:hover {
+  background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+/* Active state for buttons (optional) */
+.skill-btn:active {
+  background-color: #004099; /* Even darker shade when clicked */
+}
+
 .navbar .btn {
   margin-right: 1.5rem;
 }
@@ -167,7 +202,7 @@ body {
 #projects {
   display: flex;
   flex-direction: column;
-  margin: 2rem auto 5rem;
+  margin: 1rem auto 1rem;
 }
 
 #projects .btn {
@@ -213,6 +248,24 @@ body {
   box-sizing: border-box;
 }
 
+/* Hide icons initially */
+.icon-hidden {
+  display: none;
+}
+
+/* Style for the main sections */
+.skill-section {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+/* Display icons on hover */
+.skill-section:hover.icon-hidden {
+  display: inline-block;
+}
 
 .heading {
   text-align: center;
@@ -223,13 +276,14 @@ body {
 
 .row {
   display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
   gap: 10px; 
   margin-bottom: 20px; 
 }
 
 .col {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center; 
 }
@@ -238,10 +292,60 @@ body {
   width: 100%;
   height: auto;
 }
+.skills-container {
+  width: 100%;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+.skill-button {
+  background-color: #f8f9fa;
+  border: none;
+  color: #333;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 25px; /* Rounded edges */
+}
+
+.icon-display {
+  display: none;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
 .ftco-animate {
   animation: fadeIn 1s ease-in-out;
 }
+.container.spacing {
+  width: 80%;
+  margin: auto;
+}
+
+.content-text h2 {
+  color:var(--text-color)
+}
+
+.education-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.education-table th,
+.education-table td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
 
 @keyframes fadeIn {
   0% {opacity: 0;}
@@ -403,22 +507,6 @@ textarea.form-control {
     display: block;
     cursor: pointer;
     padding: 0.2rem 0.4rem;
-  }
-
-  .hamburger.active {
-    border: 1px dotted gray;
-  }
-
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active .bar:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
-  }
-
-  .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
   }
 }
 

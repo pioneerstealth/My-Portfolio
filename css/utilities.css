@@ -12,8 +12,8 @@
 }
 
 .img-fluid{
-  height: 50px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
 }
 h1::selection,
 h2::selection {
@@ -79,7 +79,7 @@ h2::selection {
 /* Header Container */
 .header-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   margin-top: 8rem;
@@ -90,7 +90,14 @@ h2::selection {
   margin-top: 1rem;
 }
 
+.header-left{
+  display: flex;
+  flex-direction: column;
+}
+
 .content-text {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   margin: 1.5rem 0;
 }
@@ -153,6 +160,9 @@ h2::selection {
   background: url(../assets/pexels-pixabay-46798.jpg) center center/cover;
 }
 
+.newstart{
+  padding-bottom: 20px;
+}
 
 
 @media (max-width: 768px) {
